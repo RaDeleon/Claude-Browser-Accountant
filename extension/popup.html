@@ -1,0 +1,6 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Claude Browser Accountant</title><link rel="stylesheet" href="popup.css"></head><body>
+<h1>Claude Browser Accountant</h1><p id="status">Open a Claude chat to see this organization’s meter.</p>
+<section id="controls" hidden><p class="scope" id="scope"></p><label>Organization label<input id="label" maxlength="60" placeholder="Personal or Work"></label><button id="save">Save label</button><button id="pause">Pause this organization</button><label><input type="checkbox" id="plan-enabled"> Automatically check official plan usage</label><p id="plan"></p><button id="plan-refresh">Refresh plan usage</button><p id="totals"></p><button id="export">Export this chat’s counts</button></section>
+<p class="note">Token/cost figures are visible-text estimates. Plan figures come from the official Usage page in brief inactive helper tabs. Changes are account-wide, rounded percentage points, not precise per-prompt consumption. No chats or credentials are stored.</p>
+<p class="note">Personal and work records use separate organization IDs. Browser profiles have separate extension storage. Rates checked <span id="date"></span>.</p>
+<script src="core.js"></script><script src="plan.js"></script><script src="popup.js"></script></body></html>

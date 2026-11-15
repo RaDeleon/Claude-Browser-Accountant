@@ -1,0 +1,20 @@
+{
+  "slug": "claude-browser-accountant",
+  "name": "Claude Browser Accountant",
+  "category": "Browser observability",
+  "number": "06",
+  "stack": [
+    "JavaScript",
+    "Manifest V3",
+    "DOM",
+    "Chrome Storage"
+  ],
+  "summary": "A local Claude.ai extension for visible-text token estimates, API-equivalent prices and observed account-wide plan changes.",
+  "problem": "Normal Claude web chat does not expose the per-response input/output accounting I wanted, and rounded plan percentages are easy to mistake for precise prompt measurements.",
+  "approach": "I built a Manifest V3 extension that observes rendered chats, serializes numeric records in local storage and reads the official Usage page through owned inactive tabs. Organization and chat IDs keep personal and work ledgers separate.",
+  "lesson": "Measurement boundaries belong in the interface. A visible-text estimate, a hypothetical API price and a rounded account-wide quota reading are different signals.",
+  "status": "Public source preview \u00b7 unpacked Chromium extension",
+  "scope": "DOM observation, retry tracking, scope isolation, serialized persistence, official UI sampling, browser controls and fixture-based regression tests.",
+  "color": "stone",
+  "url": "https://github.com/RaDeleon/Claude-Browser-Accountant"
+}
