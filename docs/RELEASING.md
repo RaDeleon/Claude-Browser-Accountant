@@ -1,6 +1,6 @@
 # Preview release workflow
 
-This repository starts with a review branch. Merge the reviewed PR and confirm CI before publishing the prepared draft release.
+Build each preview from the reviewed commit after CI passes. Version 1.1.2 adds the illustrated fox identity and packaged extension icons; permissions and accounting behavior are unchanged.
 
 ## Prepare
 
@@ -11,7 +11,7 @@ This repository starts with a review branch. Merge the reviewed PR and confirm C
 
 ## Draft and publish
 
-- Tag/version: `v1.1.1`. A draft release can target the review-branch commit. After merge, confirm the intended source commit before publishing.
+- Tag/version: `v1.1.2`. A draft release can target the review-branch commit. After merge, confirm the intended source commit before publishing.
 - Upload the unpacked-extension ZIP and checksums as **release assets**.
 - Mark the release a **prerelease**. Review the release notes and limitations, then publish it yourself.
 - Drafts and their assets are not public downloads. The README Download button opens Releases; until a preview is published it does not promise a binary installer.

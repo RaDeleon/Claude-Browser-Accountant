@@ -1,6 +1,8 @@
-<p align="center"><img src="docs/assets/icon.svg" width="96" alt="Claude Browser Accountant icon"></p>
+<p align="center"><img src="docs/assets/banner.png" width="100%" alt="Claude Browser Accountant original illustrated developer-workspace banner"></p>
+<p align="center"><img src="docs/assets/icon.png" width="96" alt="Claude Browser Accountant illustrated app icon"></p>
 <h1 align="center">Claude Browser Accountant</h1>
 <p align="center"><strong>Know the estimate. Keep the accounts separate.</strong></p>
+<p align="center">A local lens on Claude web chats: see the estimate, follow the plan reading, keep each account separate.</p>
 <p align="center">
 <a href="https://github.com/RaDeleon/Claude-Browser-Accountant/releases"><img src="https://img.shields.io/github/v/release/RaDeleon/Claude-Browser-Accountant?include_prereleases&amp;style=flat-square&amp;color=f5b942" alt="Latest preview release"></a>
 <a href="https://github.com/RaDeleon/Claude-Browser-Accountant/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/RaDeleon/Claude-Browser-Accountant/ci.yml?branch=main&amp;style=flat-square" alt="Main branch CI"></a>
@@ -37,7 +39,7 @@ Claude Browser Accountant puts those signals beside the conversation, keeps thei
 
 **Requirements:** BrowserOS Neo or another Chromium browser with unpacked-extension support, plus an existing Claude.ai login. Live browser acceptance was performed in Neo; other browsers are compatibility targets, not independently verified here.
 
-1. Download a source package from [Releases](https://github.com/RaDeleon/Claude-Browser-Accountant/releases), or clone this repo.
+1. Download the ready-to-load extension ZIP from [Releases](https://github.com/RaDeleon/Claude-Browser-Accountant/releases), or clone this repo.
 2. Extract the package. Open the browser's Extensions page and enable **Developer mode**.
 3. Select **Load unpacked**, then choose the `extension/` folder.
 4. Open or reload an ordinary chat on `https://claude.ai/` and submit a new prompt.
@@ -59,6 +61,35 @@ After a tracked reply, the extension can show a before/after reading such as **S
 The sampler opens an inactive official `https://claude.ai/settings/usage` tab, reads its labeled meters and reset text, validates the active organization, then closes its own tab. The official page makes its normal Claude requests; extension code makes no direct network calls or internal-API requests. Automatic checks can be disabled per organization.
 
 A before reading must precede submission and be at most five minutes old. Missing, late or stale readings become **change unavailable**. Decreases or changed reset text become **reset/limit changed**, not negative consumption. No token-to-plan-percentage conversion is invented.
+
+## What the numbers mean
+
+| Signal | Useful for | It does not establish |
+| --- | --- | --- |
+| Visible-text token estimate | Comparing the text this page exposes | Exact provider tokens or hidden context |
+| API-equivalent dollars | A consistent hypothetical list-price comparison | Your subscription bill or remaining allowance |
+| Session/weekly plan reading | Seeing the official account-wide rounded meter | Exact consumption attributable to one reply |
+| Personal/Work scope | Keeping separate local ledgers by organization | A central admin report or teammate telemetry |
+
+## When something looks wrong
+
+<details><summary><strong>No footer or the total did not move</strong></summary>
+
+Reload the Claude chat after loading/updating the extension. The extension watches new replies; it does not reconstruct spending from old messages. Let the reply settle and confirm tracking is enabled for the active organization. A changed Claude layout can require an extension update; report it without including a private chat export.
+
+</details>
+
+<details><summary><strong>Plan usage shows no change or is unavailable</strong></summary>
+
+Whole-percent rounding can hide a real change. Wrong-organization, stale, missing, reset-crossing and late readings are rejected. Other chats, Desktop or Code activity can change the same account-wide meter. Use the official Usage page to check the current reading; do not treat a missing delta as zero consumption.
+
+</details>
+
+<details><summary><strong>Do personal and work share a total?</strong></summary>
+
+No. The active organization and chat IDs define the ledger scope. Friendly labels make the popup easier to read; renaming an organization does not merge its records. Browser profiles and the separate macOS app have independent local stores.
+
+</details>
 
 ## Architecture
 
