@@ -2,7 +2,7 @@
   'use strict';
   if(location.hostname!=='claude.ai'||window!==window.top||globalThis.__claudeBrowserMeter)return;
   const C=globalThis.ClaudeMeterCore,P=globalThis.MeterPlan;
-  const instance={version:'1.1.1',captures:0,error:null};globalThis.__claudeBrowserMeter=instance;
+  const instance={version:'1.1.2',captures:0,error:null};globalThis.__claudeBrowserMeter=instance;
   const DETAILS='Estimated from visible conversation text (UTF-8 bytes ÷ 4). Input includes rendered history again for each response. Hidden instructions, unrendered history, files/images, hidden thinking/tool activity and cache behavior are unknown. Standard API list prices; not subscription billing. Totals begin when tracking starts.';
   let active='',scope=null,rows=[],account={},pending=null,scheduled=false,reading=false,generation=0;
   let planState={snapshot:null,error:null},sampling=null,lastSampleStart=0,didPrefetch=false;
