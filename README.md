@@ -1,4 +1,4 @@
-<p align="center"><img src="docs/assets/banner.png" width="100%" alt="Claude Browser Accountant original illustrated developer-workspace banner"></p>
+<p align="center"><img src="docs/assets/banner.png?title=1" width="100%" alt="Claude Browser Accountant original illustrated developer-workspace banner"></p>
 <p align="center"><img src="docs/assets/icon.png" width="96" alt="Claude Browser Accountant illustrated app icon"></p>
 <h1 align="center">Claude Browser Accountant</h1>
 <p align="center"><strong>Know the estimate. Keep the accounts separate.</strong></p>
